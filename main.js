@@ -25,8 +25,17 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 const validateCred = arr => {
-
-}
+    let newArray = [];
+    for (let i = arr.length -1; i>= 0; i--) {
+        let doubleValue = arr[i];
+        if (i % 2 === 0) {
+            doubleValue *= 2;
+        }
+    }
+    if (doubleValue > 9) {
+        doubleValue =- 9;
+    }
+};
 
 
 
