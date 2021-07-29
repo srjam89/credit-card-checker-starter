@@ -35,6 +35,8 @@ const validateCred = arr => {
     if (doubleValue > 9) {
         doubleValue =- 9;
     }
+    newArray.push(doubleValue);
+    let summedNums = newArray.reduce((a, b) => a + b);
 };
 
 
