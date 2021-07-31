@@ -36,7 +36,7 @@ const validateCred = arr => {
         doubleValue =- 9;
     }
     newArray.push(doubleValue);
-    let summedNums = newArray.reduce((a, b) => a + b);
+    let summedNums = newArray.reduce((a, b) => a + b, 0);
 
     if (summedNums % 10 === 0) {
         return true;
@@ -54,8 +54,19 @@ const validateCred = arr => {
     const invalidCardCompanies = arr => {
         let companies = [];
         for (let k = 0; k < arr.length; k++) {
-            
+            let firstDigit = arr[k][0];
+        switch (firstDigit) {
+            case 3: companies.push('Amex');
+            break;
+            case 4: companies.push('Visa');
+            break;
+            case 5: companies.push('Mastercard');
+            break;
+            case 6: companies.push('Discover');
+            break;
+            default: companies.push('Company not found');
         }
+        } return companies.filter((a, b) => companies.indexOf(a) === b);
     }
 };
 
