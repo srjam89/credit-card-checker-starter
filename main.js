@@ -37,6 +37,26 @@ const validateCred = arr => {
     }
     newArray.push(doubleValue);
     let summedNums = newArray.reduce((a, b) => a + b);
+
+    if (summedNums % 10 === 0) {
+        return true;
+    } else {
+        return false;
+    };
+    const findInvalidCards = arr => {
+        let invalidCards = [];
+        for (let j = 0; j < arr.length; j++) {
+            if (validateCred(arr[j]) === 'invalid') {
+                invalidCards.push(arr[j])
+            }
+        } return invalidCards;
+    }
+    const invalidCardCompanies = arr => {
+        let companies = [];
+        for (let k = 0; k < arr.length; k++) {
+            
+        }
+    }
 };
 
 
