@@ -42,7 +42,7 @@ const validateCred = arr => {
         return true;
     } else {
         return false;
-    };
+    }
     const findInvalidCards = arr => {
         let invalidCards = [];
         for (let j = 0; j < arr.length; j++) {
@@ -69,6 +69,8 @@ const validateCred = arr => {
         } return companies.filter((a, b) => companies.indexOf(a) === b);
     }
 };
+
+console.log(invalidCardCompanies(findInvalidCards(batch)));
 
 
 
