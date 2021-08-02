@@ -26,14 +26,15 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 // Add your functions below:
 const validateCred = arr => {
     let newArray = [];
-    for (let i = arr.length -1; i>= 0; i--) {
-        let doubleValue = arr[i];
+    let doubleValue;
+    for (let i = arr.length - 1; i >= 0; i--) {
+        doubleValue = arr[i];
         if (i % 2 === 0) {
             doubleValue *= 2;
         }
     }
     if (doubleValue > 9) {
-        doubleValue =- 9;
+        doubleValue = - 9;
     }
     newArray.push(doubleValue);
     let summedNums = newArray.reduce((a, b) => a + b, 0);
@@ -43,31 +44,32 @@ const validateCred = arr => {
     } else {
         return false;
     }
-    const findInvalidCards = arr => {
-        let invalidCards = [];
-        for (let j = 0; j < arr.length; j++) {
-            if (validateCred(arr[j]) === 'invalid') {
-                invalidCards.push(arr[j])
-            }
-        } return invalidCards;
-    }
-    const invalidCardCompanies = arr => {
-        let companies = [];
-        for (let k = 0; k < arr.length; k++) {
-            let firstDigit = arr[k][0];
+};
+const findInvalidCards = arr => {
+    let invalidCards = [];
+    for (let j = 0; j < arr.length; j++) {
+        if (!validateCred(arr[j]) {
+            invalidCards.push(arr[j])
+        }
+    } return invalidCards;
+};
+const invalidCardCompanies = arr => {
+    let companies = [];
+    for (let k = 0; k < arr.length; k++) {
+        let firstDigit = arr[k][0];
         switch (firstDigit) {
             case 3: companies.push('Amex');
-            break;
+                break;
             case 4: companies.push('Visa');
-            break;
+                break;
             case 5: companies.push('Mastercard');
-            break;
+                break;
             case 6: companies.push('Discover');
-            break;
+                break;
             default: companies.push('Company not found');
         }
-        } return companies.filter((a, b) => companies.indexOf(a) === b);
     }
+    return companies.filter((a, b) => companies.indexOf(a) === b);
 };
 
 console.log(invalidCardCompanies(findInvalidCards(batch)));
