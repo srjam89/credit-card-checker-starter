@@ -48,7 +48,7 @@ const validateCred = arr => {
 const findInvalidCards = arr => {
     let invalidCards = [];
     for (let j = 0; j < arr.length; j++) {
-        if (!validateCred(arr[j]) {
+        if (!validateCred(arr[j])) {
             invalidCards.push(arr[j])
         }
     } return invalidCards;
